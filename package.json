@@ -1,0 +1,37 @@
+{
+  "name": "postcards",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "nodemon -w src -x \"babel-node ./src\"",
+    "build": "babel ./src -d ./dist",
+    "start": "node ./dist",
+    "test": "eslint ."
+  },
+  "author": "Aler Senkevich (mail@alersenkevich.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.12.1",
+    "eslint-config-atomix-base": "^5.0.0",
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "lodash": "^4.17.4",
+    "moment": "^2.19.3",
+    "mongoose": "^4.13.6",
+    "node-fetch": "^1.7.3",
+    "pug": "^2.0.0-rc.4",
+    "rimraf": "^2.6.2",
+    "ws": "^3.3.2"
+  }
+}

@@ -1,0 +1,31 @@
+doctype html
+xhtml(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='icon', href='../../favicon.ico')
+    title Dashboard Template for Bootstrap
+    link(href='/js/jquery-ui/jquery-ui.min.css', rel='stylesheet')
+    // Bootstrap core CSS
+    link(href='/css/bootstrap.min.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='/css/dashboard.css', rel='stylesheet')
+  body
+    .container-fluid
+      img#bitmap(src='/images/bitmap.png')
+      block content
+          
+          
+    //
+      Bootstrap core JavaScript
+      ==================================================
+    // Placed at the end of the document so the pages load faster
+    script(src='/js/jquery-3.1.1.slim.min.js')
+    script(src="http://wzrd.in/standalone/uuid%2Fv4@latest")
+    script(src='https://unpkg.com/axios/dist/axios.min.js')
+    script(src='/js/app/main.js')
+    script(src='/js/bootstrap.min.js')
+    // IE10 viewport hack for Surface/desktop Windows 8 bug
+    script(src='/js/ie10-viewport-bug-workaround.js')

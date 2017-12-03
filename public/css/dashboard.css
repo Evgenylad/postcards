@@ -1,0 +1,402 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+
+@font-face {
+  font-family: "FuturaBold"; 
+  src: url("/fonts/Futura.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
+
+@font-face {
+  font-family: "neucha"; 
+  src: url("/fonts/neucha.otf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+} 
+
+body {
+  padding:0;
+  margin:0;
+}
+
+
+
+.white-container{
+  width:100%;
+  height:350px;
+  vertical-align:top;
+  margin-top:20px;
+  background:#fff;
+  border:1px solid #eee;
+  box-shadow:         0px 2px 15px 0px rgba(50, 50, 50, 0.75);
+}
+
+.legend{
+  margin-top:20px;
+  width:40%;
+  margin-left:30%;
+  margin-right:30%;
+  text-align:center;
+}
+
+.fone{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.5);
+  z-index:9999;
+}
+
+#men-names{
+  text-align:center;
+}
+
+#girl-names{
+  text-align:center;
+}
+
+.pop{
+  font-family: "neucha";
+  position:absolute;
+  display:none;
+  border-radius:5px;
+  width: 800px;
+  height:600px;
+  min-height:600px;
+  background:red;
+  top:50px;
+  left:50%;
+  margin-left:-400px;
+  z-index:99999;
+  color:#fff;
+  font-size:18px;
+}
+
+#names-container{
+  margin-top:-500px;
+  font-size:20px;
+}
+
+#names-container span{
+  cursor:pointer;
+}
+
+#men-names{
+  height:490px;
+  overflow-y:scroll;
+}
+#girl-names{
+  height:490px;
+  overflow-y:scroll;
+}
+
+.setochki{
+  font-size:18px;
+  padding:5px;
+}
+
+.push{
+  display:block;
+  width:100px;
+  margin-left:870px;
+  margin-top:-40px;
+}
+
+#welcome{
+}
+
+#first{
+  display:none;
+}
+.first{
+  text-align:center;
+  display:none;
+}
+
+.second{
+  display:none;
+}
+
+#last{
+  display:none
+}
+
+.red-btn{
+  border-radius:30px;
+  background:red;
+  color:#fff;
+  font-family: 'FuturaBold';
+  padding:10px 20px;
+  display:block;
+  text-align:center;
+  font-size:16px;
+  text-transform: uppercase;
+  cursor:pointer;
+  border:1px solid red;
+  width:30%;
+  margin-left:35%;
+  margin-top:20px;
+}
+
+.red-btn:hover{
+  background:#fff;
+  color:red;
+}
+
+.red-button{
+  border-radius:30px;
+  background:red;
+  color:#fff;
+  font-family: 'FuturaBold';
+  padding:10px 20px;
+  display:block;
+  width:220px;
+  text-align:center;
+  font-size:16px;
+  text-transform: uppercase;
+  //float:right;
+  transform: rotate(-19deg);
+  margin-top:-90px;
+  //margin-right:200px;
+  margin-left:660px;
+  cursor:pointer;
+  border:1px solid red;
+}
+
+.red-button:hover{
+  background:#fff;
+  color:red;
+}
+
+.container-fluid{
+  padding:0;
+}
+
+#bitmap{
+  position:absolute;
+  z-index:1;
+  top:0;
+  width:100%;
+}
+
+#backs{
+  width:100%;
+  height:523px;
+  background: url("/images/upback.jpg");
+  z-index:-1;
+  display:block;
+}
+#red-backs{
+  width:100%;
+  height:500px;
+  background: url("/images/red.png");
+  margin-top:23px;
+  z-index:1;
+  display:block;
+  background-position: top center;
+}
+#down-backs{
+  width:100%;
+  height:260px;
+  background: url("/images/downback.png");
+  margin-top:23px;
+  z-index:-1;
+  display:block;
+  background-position: top center;
+}
+
+.socsetochki{
+  vertical-align:top;
+  margin-top:-40px;
+}
+.socsetochki a{
+  margin-left:5px;
+}
+
+.socsetochki a img{
+  height:30px;
+}
+
+.notify{
+  float:right;
+  padding:20px 20px;
+  border:1px solid rgba(226, 2, 2, 1);
+  margin-top:0px;
+  margin-right:0;
+  min-width:150px;
+  font-size:15px;
+  background: rgba(226, 2, 2, .75);
+  border-radius:5px;
+  box-shadow:         1px 1px 3px 0px rgba(50, 50, 50, 0.75);
+  color:#fff;
+  text-shadow: 1px 1px 2px black;
+  display:none;
+}
+
+.spectator-socket-input{
+  max-width:200px;
+}
+
+.editor-icon{
+  cursor:pointer;
+  width:25px;
+  display:inline-block;
+  text-align:center;
+}
+
+
+.editor-delete{
+  cursor:pointer;
+  width:25px;
+  display:inline-block;
+  text-align:center;
+  margin-left:10px;
+}
+
+.editor-icon img{
+  width:100%;
+}
+
+/*
+ * Typography
+ */
+
+
+ .table-striped tbody tr{
+  height:30px;
+  padding:0;
+ }
+.table-striped thead{
+  font-size:12px;
+}
+
+.table-striped tbody td{
+  text-align:left;
+}
+
+.status-online{
+  width:10px;
+  height:10px;
+  border-radius:20px;
+  background:rgb(194, 255, 113);  
+}
+.status-offline{
+  width:10px;
+  height:10px;
+  border-radius:20px;
+  background: rgb(175, 175, 175);
+}
+
+.slaves-module{
+  display:none;
+}
+
+.data-module h1{
+  border:none;
+}
+
+.spectator-status{
+  max-width:10px;
+}
+.spectator-uid{
+  font-size:11px;
+  font-style: italic;
+  color:#999;
+  width:300px;
+}
+
+.spectator-manage a{
+  vertical-align:top;
+  display:inline-block;
+}
+
+.spectator-region-select{
+  display:block;
+  max-width:224px;
+  //display:none;
+}
+
+.spectator-cashbox-select{
+  display:none;
+  max-width:224px;
+}
+
+.spectator-time{
+  font-size:13px;
+  font-style:italic;
+  width:230px;
+}
+
+.spectator-region {
+  width:250px;
+}
+
+.spectator-cashbox{
+  min-width:200px;
+  text-align:left;
+}
+
+h1 {
+  margin-bottom: 20px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  border-right: 1px solid #eee;
+}
+
+/* Sidebar navigation */
+.sidebar {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sidebar .nav {
+  margin-bottom: 20px;
+}
+
+.sidebar .nav-item {
+  width: 100%;
+}
+
+.sidebar .nav-item + .nav-item {
+  margin-left: 0;
+}
+
+.sidebar .nav-link {
+  border-radius: 0;
+}
+
+/*
+ * Dashboard
+ */
+
+ /* Placeholders */
+.placeholders {
+  padding-bottom: 3rem;
+}
+
+.placeholder img {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}

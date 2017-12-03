@@ -1,0 +1,124 @@
+extends ../layouts/main
+block content
+  .pop
+    .container
+      .row(style='margin-top:30px;')  
+        .col-md-1
+        .col-md-5
+          div(style='text-align:center;')
+            img(src='/images/man.png', style='width:40px;')
+        .col-md-5
+          div(style='text-align:center;')
+            img(src='/images/girl.png', style='width:40px;')
+        .col-md-1
+        img(src='/images/name-line.png', style='width:90%;margin-left:5%;margin-top:10px;')
+        img(src='/images/vertical-line.png', style='margin-top:-100px;width:6px;margin-left:49%;height:600px;')
+      .row#names-container
+        .col-md-1
+        .col-md-5#men-names
+          each item in men
+            br
+            span=item
+        .col-md-5#girl-names
+          each item in girls
+            br
+            span=item
+        .col-md-1
+  .fone
+  div#backs
+  main
+    div#welcome.container(style='margin-top:-500px;')
+      img(src='/images/logo.png', style='height:50px;margin-left:260px;margin-top:0px;')
+      img(src='/images/cat.png', style='height:400px;margin-top:20px;margin-left:150px;')
+      div.red-button создать открытку
+      img.push(src='/images/push.png')
+    div#first.container(style='margin-top:-500px;')
+      .row
+        .col-md-2
+        .col-md-8
+          img(src='/images/logo.png', style='height:50px;margin-top:0px;')
+          .white-container
+            .first
+              div.red-btn#choose-name Выбрать имя
+              img.push(src='/images/push.png', style='width:100px;vertical-align:top;margin-top:-20px;margin-left:500px;')
+              img(src='/images/pure-cat.png', style='width:365px;vertical-align:top;margin-top:2px;')
+            .second
+              h3(style='font-weight:normal;text-align:center;') Выберите способ доставки открытки:
+              .row
+                .col-md-6
+                  img(src='/images/pure-cat.png', style='width:395px;vertical-align:top;margin-top:45px;display:inline-block;vertical-align:top;')
+                .col-md-1
+                .col-md-5
+                  .sozz(style='margin-top:50px;')
+                    .row
+                      .col-md-4
+                        input.setochki(type='radio', name='kind', value='vk')
+                        img(src='/images/vk.png', style='width:50px;margin-left:10px;')
+                      .col-md-4
+                        input.setochki(type='radio', name='kind', value='fb')
+                        img(src='/images/fb.png', style='width:50px;margin-left:10px;')
+                    br
+                    .row
+                      .col-md-4
+                        input.setochki(type='radio', name='kind', value='tg')
+                        img(src='/images/tg.png', style='width:50px;margin-left:10px;')
+                    .row
+                      .col-md-10
+                        .red-btn(style='width:230px;margin-left:0;margin-top:50px;') Создать открытку
+              
+
+          .legend
+            img(src='/images/left-arrow.png', style='width:40px;margin-left:-10px;')
+            img(src='/images/right-arrow.png', style='width:40px;margin-left:20px;')
+        .col-md-2
+    #last.container(style='margin-top:-500px;')
+      .row
+        .col-md-2
+        .col-md-8
+          img(src='/images/logo.png', style='height:50px;margin-top:0px;')
+          img(src='/images/last.png', style='width:90%;')
+          textarea(style='width:290px;resize:none;height:100px;vertical-align:top;margin-top:-200px;margin-left:300px;')
+        .red-btn(style='width:180px;margin-left:560px;margin-top:-110px;z-index:99999999;display:block;height:45px;') скопировать
+
+  div#red-backs
+    .container
+      .row
+        .col-md-2
+        .col-md-6(style='color:#fff;font-size:14px;')
+          label(style="color:#fff;margin-top:50px;vertical-align:top;font-family:'FuturaBold'") Вася Ложкин, художник:
+          p «Люблю про инопланетян про всяких, про заговор мирового правительства против нашей прекрасной Родины, про то, как американцы проклятые точат на нас зубы и мечтают о том, чтобы вцепиться и разорвать  нашу страну в клочья. Если я смотрю телевизор, то скорее всего – РЕН ТВ.
+          | Это достаточно интересный опыт – из больших телеканалов такого еще никто не делал».
+        .col-md-2
+          img(src='/images/lojkin.png', width='100%', style='margin-top:50px;border:3px solid #fff;border-radius:100px;')
+      img(src='/images/polosa.png', style="width:60%;margin-left:20%;vertical-align:top;margin-top:30px;")
+      .row
+        .col-md-2
+        .col-md-2
+          img(src='/images/rodrigez.png', width='100%', style='margin-top:20px;border:3px solid #fff;border-radius:100px;')
+        .col-md-6(style='color:#fff;font-size:14px;')
+          label(style="color:#fff;margin-top:50px;vertical-align:top;font-family:'FuturaBold'") Тимур Родригез, шоумен:
+          p «Самой веселой и неуправляемой с точки зрения разных звуков получилась бабушка. Но кот был мне интереснее всего, потому что он не мог говорить ничего, кроме «мяу». Бабушка постоянно находилась в диалоге с «дедом» или котом, а вот кот выражал свои эмоции только с помощью «мяуканья».
+    #down-backs
+      .container
+        .row
+          .col-md-2
+          .col-md-8
+            p(style='margin-top:40px;vertical-align:top;')
+              strong Телеканал РЕН ТВ 
+              | от всей души хочет поздравить всех россиян с наступающим Новым годом. Мы желаем Вам провести это праздничное время прекрасных хлопот и эмоций с прекрасным настроением.Пусть Новый год станет для нас успешным и хорошими событиями и знакомствами, желаниями и возможностями, жизнь играет всеми красками, как конфетти, сбываются мечты, сияют на лицах улыбки, глаза искрятся счастьем! Здоровья, любви, взаимопонимания, радости, достатка! Нас с Вами ждет довольно сложный год, но мы вместе! 
+              strong С Новым 2018 годом, друзья!
+              br
+              br
+              img(src='/images/logo.png', height='30px')
+              .socsetochki(style='float:right;')
+                a(href='vk.com')
+                  img(src='/images/vk.png')
+                a(href='vk.com')
+                  img(src='/images/tw.png')
+                a(href='vk.com')
+                  img(src='/images/ok.png')
+                a(href='vk.com')
+                  img(src='/images/fb.png')
+          .col-md-2
+  
+    
