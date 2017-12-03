@@ -44,6 +44,7 @@ const makeVideo = async (uid, name) => {
   let sirname = name[0].toUpperCase() + name.substr(1, name.length)
   const videoFile = `./public/videos/${random}.mov`
   const path = `./public/ready/${uid}`
+  console.log(`${path}/final.mp4`)
 
   const makeFinal = () => exec(`ffmpeg -i ${path}/videofinal.mp4 -i ${path}/audiofinal.mp3 -shortest ${path}/final.mp4`, returnRes)
 
@@ -54,6 +55,7 @@ const makeVideo = async (uid, name) => {
   const extractMP3 = () => exec(`ffmpeg -i ${videoFile} ${path}/main.mp3`, mergeMP3)
 
   const returnRes = () => {
+    
     return true
   }
 
@@ -65,6 +67,7 @@ const makeVideo = async (uid, name) => {
 const makePostcard = async (req, res) => {
   const made = await makeVideo(req.body.userID, req.body.name)
   const result = await addPostcard({ uid: req.body.userID, name: req.body.name })
+  console.log(result)
   res.send({ check: 1 })
 }
 
