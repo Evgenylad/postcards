@@ -88,7 +88,7 @@ const loadToVk = async (data) => {
   //const accessKey = `217273f4710dccd257b4eaa845b8701cd7976f9e65e741dffeec85db88d3d933c027f06ec00adf7231ac3`
   //const { data:response } = await axios.get(`https://api.vk.com/method/video.save?name=${data.uid}&access_token=${accessKey}&v=5.69`)
   const CLIENT_ID = 6285041
-  CONST CLIENT_SECRET = '439ce631439ce631439ce631e043c300c04439c439ce63119b96c922a30f179ca26fc6b'
+  const CLIENT_SECRET = '439ce631439ce631439ce631e043c300c04439c439ce63119b96c922a30f179ca26fc6b'
   const { data: response } = await axios.get(`https://oauth.vk.com/access_token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&v=5.69&grant_type=client_credentials`)
   console.log(response)
 }
