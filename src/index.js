@@ -25,7 +25,7 @@ global.Promise = bluebird
 Promise.config({ cancellation: true })
 
 mongoose.connection.on('connected', () => {
-  server.listen(PORT, () => console.log('server is running'))
+  server.listen(80, () => console.log('server is running'))
 })
 
 try {
