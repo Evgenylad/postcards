@@ -101,7 +101,7 @@ const loadToVk = async (data) => {
   const { data:response } = await axios.get(`https://api.vk.com/method/video.save?name=${data.uid}&access_token=${ACCESS_TOKEN}&v=5.69`)*/
   //console.log(response)
   const ACCESS_TOKEN = response.access_token
-  const { data:result } = await axios.get(`https://api.vk.com/method/video.save?name=${data.uid}&access_token=${ACCESS_TOKEN}&v=5.69`)
+  const { data:result } = await axios.post(`https://api.vk.com/method/video.save?name=${data.uid}&access_token=${ACCESS_TOKEN}&v=5.69`)
   console.log(result)
 }
 
