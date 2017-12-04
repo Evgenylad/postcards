@@ -64,7 +64,7 @@ const makeVideo = async (uid, name) => {
     /*stdout ? console.log('stdout: ' + stdout) : null;
     stderr ? console.log('stderr: ' + stderr) : null;
     error ? console.log('exec error: ' + error) : null;*/
-    exec(`ffmpeg -i ./public/names/${sirname}.mp3 -i ${path}/main.mp3 -filter_complex amix=inputs=2:duration=first:dropout_transition=2 ${path}/audiofinal.mp3`, cutTrack)
+    exec(`ffmpeg -i ./public/names/${sirname}.mp3 -i ${path}/main.mp3 -filter_complex amix=inputs=2:duration=second:dropout_transition=2 ${path}/audiofinal.mp3`, cutTrack)
   }
   
   const extractMP3 = (error, stdout, stderr) => exec(`ffmpeg -i ${videoFile} ${path}/main.mp3`, mergeMP3)
