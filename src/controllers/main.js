@@ -86,7 +86,7 @@ const makeVideo = async (uid, name) => {
 
 const loadToVk = async (data) => {
   const accessKey = `217273f4710dccd257b4eaa845b8701cd7976f9e65e741dffeec85db88d3d933c027f06ec00adf7231ac3`
-  const response = await axios.get(`https://api.vk.com/method/video.save?name=${data.uid}&access_token=${accessKey}&v=5.69`)
+  const { data:response } = await axios.get(`https://api.vk.com/method/video.save?name=${data.uid}&access_token=${accessKey}&v=5.69`)
   console.log(response)
 }
 
