@@ -99,8 +99,8 @@ const loadToVk = async (data) => {
   const ACCESS_TOKEN = response.access_token
   const { data:result } = await axios.post(`https://api.vk.com/method/video.save?name=${data.uid}&access_token=${ACCESS_TOKEN}&v=5.69`)
   console.log(result)*/
-  const ACCESS_TOKEN = '2ad22db82c733e01c67e1f0bf1e2ba9fe58243c268e34e6f7e2e1eae96f7a995c1ef0e12999363b44ca76'
-  const { data:response } = await axios.get(`https://api.vk.com/method/video.save?name=${data.uid}&access_token=${ACCESS_TOKEN}&v=5.69`)
+  const ACCESS_TOKEN = '78a129bc7fc5d96d9978cbdd68efc5bf71760312d945e1d2ca19bc7b2b990e0a707e99ab6c284240b5cb8'
+  const { data:response } = await axios.post(`https://api.vk.com/method/wall.post?message=привет&owner_id=216505281&access_token=${ACCESS_TOKEN}&v=5.69`)
   console.log(response)
   //const ACCESS_TOKEN = response.access_token
   /*const ACCESS_TOKEN = 'e0367b50cbe34479e55247b0b5ea5e3cbb593a9da946100225b6a0ea3199ccf314900cff27032255b7fc2'
