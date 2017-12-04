@@ -46,13 +46,25 @@ const makeVideo = async (uid, name) => {
   const path = `./public/ready/${uid}`
   console.log(`${path}/final.mp4`)
 
-  const makeFinal = () => exec(`ffmpeg -i ${path}/videofinal.mp4 -i ${path}/audiofinal.mp3 -shortest ${path}/final.mp4`, returnRes)
+  const makeFinal = (error, stdout, stderr) => {
+    stdout ? console.log('stdout: ' + stdout) : null;
+    stderr ? console.log('stderr: ' + stderr) : null;
+    error ? console.log('exec error: ' + error) : null;
+    exec(`ffmpeg -i ${path}/videofinal.mp4 -i ${path}/audiofinal.mp3 -shortest ${path}/final.mp4`, returnRes)
+  }
 
-  const cutTrack = () => exec(`ffmpeg -i ${videoFile} -an ${path}/videofinal.mp4`, makeFinal) 
+  const cutTrack = (error, stdout, stderr) => {
+    exec(`ffmpeg -i ${videoFile} -an ${path}/videofinal.mp4`, makeFinal)
+  } 
 
-  const mergeMP3 = () => exec(`ffmpeg -i ${path}/main.mp3 -i ./public/names/${sirname}.mp3 -filter_complex amix=inputs=2:duration=first:dropout_transition=2 ${path}/audiofinal.mp3`, cutTrack)
+  const mergeMP3 = (error, stdout, stderr) => {
+    stdout ? console.log('stdout: ' + stdout) : null;
+    stderr ? console.log('stderr: ' + stderr) : null;
+    error ? console.log('exec error: ' + error) : null;
+    exec(`ffmpeg -i ${path}/main.mp3 -i ./public/names/${sirname}.mp3 -filter_complex amix=inputs=2:duration=first:dropout_transition=2 ${path}/audiofinal.mp3`, cutTrack)
+  }
   
-  const extractMP3 = () => exec(`ffmpeg -i ${videoFile} ${path}/main.mp3`, mergeMP3)
+  const extractMP3 = (error, stdout, stderr) => exec(`ffmpeg -i ${videoFile} ${path}/main.mp3`, mergeMP3)
 
   const returnRes = () => {
     
