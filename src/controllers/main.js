@@ -93,8 +93,8 @@ const loadToVk = async (data) => {
 
   */
 
-  const CLIENT_ID = 6285041
-  const CLIENT_SECRET = 'aNBdy2yXcqfQwu6GtfhK'
+  const CLIENT_ID = '6285041'
+  const CLIENT_SECRET = '3RO2DVd6vpBQ9AZJHxdh'
   const { data: response } = await axios.get(`https://oauth.vk.com/access_token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&v=5.69&grant_type=client_credentials`)
 
   /*const ACCESS_TOKEN = '870e03ea870e03ea875236a4b98751e51b8870e870e03eadd2b95f23e0d2af41df6bc1c'
