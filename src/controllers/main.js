@@ -41,7 +41,7 @@ const runApp = async (req, res) => {
 const makeVideo = async (uid, name) => {
   await mkdir(`./public/ready/${uid}`)
   const random = randomInteger(1,7)
-  let sirname = name[0].toUpperCase() + name.substr(1, name.length)
+  let sirname = name[0].toLowerCase() + name.substr(1, name.length)
   const videoFile = `./public/videos/${random}.mov`
   const path = `./public/ready/${uid}`
   console.log(`${path}/final.mp4`)
