@@ -50,13 +50,15 @@ const makeVideo = async (uid, name) => {
     /*stdout ? console.log('stdout: ' + stdout) : null;
     stderr ? console.log('stderr: ' + stderr) : null;
     error ? console.log('exec error: ' + error) : null;*/
-    exec(`ffmpeg -i ${path}/videofinal.mp4 -pix_fmt yuv420p -i ${path}/audiofinal.mp3 -shortest ${path}/final.mp4`, returnRes)
+    //exec(`ffmpeg -i ${path}/videofinal.mp4 -i ${path}/audiofinal.mp3 -shortest -pix_fmt yuv420p ${path}/final.mp4`, returnRes)
+    exec(`ffmpeg -i ${path}/videofinal.mp4 -i ${path}/audiofinal.mp3 \
+    -c:v copy -c:a aac -strict experimental ${path}/final.mp4`, returnRes)
   }
 
   const cutTrack = (error, stdout, stderr) => {
-    stdout ? console.log('stdout: ' + stdout) : null;
+    /*stdout ? console.log('stdout: ' + stdout) : null;
     stderr ? console.log('stderr: ' + stderr) : null;
-    error ? console.log('exec error: ' + error) : null;
+    error ? console.log('exec error: ' + error) : null;*/
     exec(`ffmpeg -i ${videoFile} -an ${path}/videofinal.mp4`, makeFinal)
   } 
 
