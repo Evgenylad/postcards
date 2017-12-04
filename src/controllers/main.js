@@ -99,7 +99,10 @@ const loadToVk = async (data) => {
 
   /*const ACCESS_TOKEN = '870e03ea870e03ea875236a4b98751e51b8870e870e03eadd2b95f23e0d2af41df6bc1c'
   const { data:response } = await axios.get(`https://api.vk.com/method/video.save?name=${data.uid}&access_token=${ACCESS_TOKEN}&v=5.69`)*/
-  console.log(response)
+  //console.log(response)
+  const ACCESS_TOKEN = response.access_token
+  const { data:result } = await axios.get(`https://api.vk.com/method/video.save?name=${data.uid}&access_token=${ACCESS_TOKEN}&v=5.69`)
+  console.log(result)
 }
 
 const makePostcard = async (req, res) => {
