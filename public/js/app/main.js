@@ -29,7 +29,7 @@
     }
   }
 
-  main.tokenGotted = (token) => {
+  window.tokenGotted = (token) => {
     main.token = token
     console.log(token)
     main.smallWin.close()
