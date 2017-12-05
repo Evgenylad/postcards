@@ -30,7 +30,10 @@
   }
 
   window.saveVideo = async (token) => {
-    const result = await axios.post(`https://api.vk.com/method/video.save?name=${window.userID}&access_token=${token}&v=5.69`)
+    const result = await axios.post(`https://api.vk.com/method/video.save?name=${window.userID}&access_token=${token}&v=5.69`, {
+      link: `http://lexxxbro.com/ready/${window.userID}/final.mp4`,
+      name: 'Postcard-RenTV'
+    })
     console.log(result.data)
   }
 
