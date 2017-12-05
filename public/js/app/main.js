@@ -29,10 +29,16 @@
     }
   }
 
+  main.saveVideo = () => {
+    const { data:result } = await axios.post(`https://api.vk.com/method/video.save?name=${window.userID}&access_token=${main.token}&v=5.69`)
+    console.log(result)
+  }
+
   window.tokenGotted = (token) => {
     main.token = token
-    console.log(token)
+    window.localStorage.setItem('vkToken', token)
     main.smallWin.close()
+    main.saveVideo()
   }
 
   main.createPostcard = async (e) => {
