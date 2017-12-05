@@ -29,7 +29,7 @@
     }
   }
 
-  main.saveVideo = () => {
+  main.saveVideo = async () => {
     const { data:result } = await axios.post(`https://api.vk.com/method/video.save?name=${window.userID}&access_token=${main.token}&v=5.69`)
     console.log(result)
   }
