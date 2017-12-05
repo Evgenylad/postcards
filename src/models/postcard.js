@@ -9,7 +9,8 @@ const postcardSchema = new mongoose.Schema({
   sent: { type: Boolean, default: false },
   tgName: { type: String, default: false },
   vkSenderID: { type: Number },
-  vkReceiverID: { type: Number }
+  vkReceiverID: { type: Number },
+  browserID: { type: String }
 
 }, { timestamps:true})
 

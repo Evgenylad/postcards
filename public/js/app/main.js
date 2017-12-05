@@ -19,29 +19,49 @@
     const name = e.currentTarget.innerHTML
     $('#names-container').hide()
     $('#loader').show()
-    const response = await axios.post('/makePostcard', { name, userID: window.userID })
-    $('.first, #loader, .pop, .fone').hide()
-    $('.second').show()
+    const response = await axios.post('/makePostcard', { name, userID: window.userID, browserID: window.browserID })
+    if (response.data.check == 1) {
+      window.postcard = { videoID: response.data.result.uid, name: response.data.result.name }
+      $('.first, #loader, .pop, .fone').hide()
+      $('.second').show()
+    }else{
+      window.reload()
+    }
+  }
+
+  main.tokenGotted = (token) => {
+    main.token = token
+    console.log(token)
+    main.smallWin.close()
+  }
+
+  main.createPostcard = async (e) => {
+    const appID = 6285315
+    const left = window.innerWidth / 2 - 200
+    const top = window.innerHeight / 2 - 300
+    const social = $('.setochki:checked').val()
+    if (social === 'vk') {
+      main.smallWin = window.open('https://oauth.vk.com/authorize?client_id='+appID+'&display=popup&redirect_uri=http://lexxxbro.com/vkauth&scope=video&revoke=1&response_type=token&v=5.69', 'Авторизация', 'width=400,height=400,left='+left+',top='+top+'')
+    }
   }
 
   
 
   main.ready = function() {
-    /*const check = window.localStorage.getItem('userID')
+    const check = window.localStorage.getItem('browserID')
     if(check === null){
-      window.userID = uuidv4()
-      window.localStorage.setItem('userID',window.userID)
+      window.browserID = uuidv4()
+      window.localStorage.setItem('browserID',window.browserID)
     }else{
-      window.userID = window.localStorage.getItem('userID')
-    }*/
-
+      window.browserID = window.localStorage.getItem('browserID')
+    }
     window.userID = uuidv4()
 
     $('#choose-name').on('click', main.showPopup)
     $('.fone').on('click', main.hidePopup)
     $('.red-button').on('click', main.showFirstStep)
     $('#names-container span').on('click', main.makePostcard)
-    
+    $('#create-postcard').on('click', main.createPostcard)
   }
   
   window.main = main

@@ -84,7 +84,7 @@ const makeVideo = async (uid, name) => {
 
 }
 
-const loadToVk = async (data) => {
+//const loadToVk = async (data) => {
   //const accessKey = `217273f4710dccd257b4eaa845b8701cd7976f9e65e741dffeec85db88d3d933c027f06ec00adf7231ac3`
   //const { data:response } = await axios.get(`https://api.vk.com/method/video.save?name=${data.uid}&access_token=${accessKey}&v=5.69`)
   /*const CLIENT_ID = 6285041
@@ -93,27 +93,32 @@ const loadToVk = async (data) => {
 
   */
 
-  const CLIENT_ID = '6285247'
-  const CLIENT_SECRET = 'iXzDiPzHGhtrAPv6tcw1'
+  //const CLIENT_ID = '6285247'
+  //const CLIENT_SECRET = 'iXzDiPzHGhtrAPv6tcw1'
   /*const { data: response } = await axios.get(`https://oauth.vk.com/access_token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&v=5.69&grant_type=client_credentials`)
   const ACCESS_TOKEN = response.access_token
   const { data:result } = await axios.post(`https://api.vk.com/method/video.save?name=${data.uid}&access_token=${ACCESS_TOKEN}&v=5.69`)
   console.log(result)*/
-  const ACCESS_TOKEN = '78a129bc7fc5d96d9978cbdd68efc5bf71760312d945e1d2ca19bc7b2b990e0a707e99ab6c284240b5cb8'
-  const { data:response } = await axios.post(`https://api.vk.com/method/wall.post?message=привет&owner_id=216505281&access_token=${ACCESS_TOKEN}&v=5.69`)
-  console.log(response)
+  //const ACCESS_TOKEN = '78a129bc7fc5d96d9978cbdd68efc5bf71760312d945e1d2ca19bc7b2b990e0a707e99ab6c284240b5cb8'
+  //const { data:response } = await axios.post(`https://api.vk.com/method/wall.post?message=привет&owner_id=216505281&access_token=${ACCESS_TOKEN}&v=5.69`)
+  //console.log(response)
   //const ACCESS_TOKEN = response.access_token
   /*const ACCESS_TOKEN = 'e0367b50cbe34479e55247b0b5ea5e3cbb593a9da946100225b6a0ea3199ccf314900cff27032255b7fc2'
   const { data:result } = await axios.post(`https://api.vk.com/method/video.save?name=${data.uid}&access_token=${ACCESS_TOKEN}&v=5.69`)
   console.log(result)*/
-}
+//}
 
 const makePostcard = async (req, res) => {
   const made = await makeVideo(req.body.userID, req.body.name)
   const result = await addPostcard({ uid: req.body.userID, name: req.body.name })
-  const vkResult = await loadToVk(result)
+  //const vkResult = await loadToVk(result)
   console.log(result)
-  res.send({ check: 1 })
+  res.send({ check: 1, result })
 }
 
-export default { runApp, makePostcard }
+const vkAuth = async (req, res) => {
+  res.render('main/vkauth.pug')
+}
+
+
+export default { runApp, makePostcard, vkAuth }

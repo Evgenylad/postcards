@@ -20,6 +20,7 @@ export async function addPostcard(postcard) {
     const newPostcard = new Postcard({
       uid: postcard.uid,
       name: postcard.name,
+      browserID: postcard.browserID
     })
     return newPostcard.save()
   }
