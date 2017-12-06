@@ -54,11 +54,11 @@
 
   main.copyText = () => {
     var textarea = document.getElementById("LINK");
-    //var answer = document.getElementById("copyAnswer");
+    /*//var answer = document.getElementById("copyAnswer");
     var copy = document.getElementById("copyLink");
     copy.addEventListener('click', function(e) {
     
-       // Select some text (you could also create a range)
+       // Select some text (you could also create a range)*/
        textarea.select(); 
     
        // Use try & catch for unsupported browser
@@ -72,7 +72,7 @@
        } catch (err) {
            alert('Не поддерживается браузером');
        }
-    });
+    //});
   }  
 
   main.ready = function() {
