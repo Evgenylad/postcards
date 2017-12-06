@@ -23,7 +23,8 @@
     if (response.data.check == 1) {
       window.postcard = { videoID: response.data.result.uid, name: response.data.result.name }
       $('.first, #loader, .pop, .fone').hide()
-      $('.second').show()
+      $('#last').show()
+      $('#LINK').val(`http://lexxxbro.com/ready/${videoID}/final.mpg`)
     }else{
       window.reload()
     }
