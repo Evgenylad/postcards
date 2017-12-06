@@ -113,7 +113,7 @@ const makeVideo = async (uid, name) => {
 const makePostcard = async (req, res) => {
   const made = await makeVideo(req.body.userID, req.body.name)
   const result = await addPostcard({ uid: req.body.userID, name: req.body.name })
-  const vkResult = await loadToVk(result)
+  //const vkResult = await loadToVk(result)
   console.log(result)
   res.send({ check: 1, result })
 }
