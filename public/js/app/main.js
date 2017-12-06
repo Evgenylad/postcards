@@ -24,7 +24,7 @@
       window.postcard = { videoID: response.data.result.uid, name: response.data.result.name }
       $('#first, .first, #loader, .pop, .fone').hide()
       $('#last').show()
-      $('#LINK').val(`http://lexxxbro.com/ready/${window.postcard.videoID}/final.mpg`).select()
+      $('#LINK').val(`http://lexxxbro.com/ready/${window.postcard.videoID}/final.mpg`)
     }else{
       window.reload()
     }
@@ -53,9 +53,26 @@
   }
 
   main.copyText = () => {
-    const text = $('#LINK').val()
-    document.execCommand('copy')
-    $('#LINK').val('')
+    var textarea = document.getElementById("LINK");
+    //var answer = document.getElementById("copyAnswer");
+    var copy = document.getElementById("copyLink");
+    copy.addEventListener('click', function(e) {
+    
+       // Select some text (you could also create a range)
+       textarea.select(); 
+    
+       // Use try & catch for unsupported browser
+       try {
+    
+           // The important part (copy selected text)
+           var successful = document.execCommand('copy');
+    
+           if(successful) alert('Copied!')
+           else alert('Unable to copy!');
+       } catch (err) {
+           alert('Не поддерживается браузером');
+       }
+    });
   }  
 
   main.ready = function() {
