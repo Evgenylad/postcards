@@ -22,9 +22,9 @@
     const response = await axios.post('/makePostcard', { name, userID: window.userID, browserID: window.browserID })
     if (response.data.check == 1) {
       window.postcard = { videoID: response.data.result.uid, name: response.data.result.name }
-      $('.first, #loader, .pop, .fone').hide()
+      $('#first, .first, #loader, .pop, .fone').hide()
       $('#last').show()
-      $('#LINK').val(`http://lexxxbro.com/ready/${videoID}/final.mpg`)
+      $('#LINK').val(`http://lexxxbro.com/ready/${window.postcard.videoID}/final.mpg`)
     }else{
       window.reload()
     }
