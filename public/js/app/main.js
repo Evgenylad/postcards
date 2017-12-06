@@ -24,7 +24,7 @@
       window.postcard = { videoID: response.data.result.uid, name: response.data.result.name }
       $('#first, .first, #loader, .pop, .fone').hide()
       $('#last').show()
-      $('#LINK').val(`http://lexxxbro.com/ready/${window.postcard.videoID}/final.mpg`)
+      $('#LINK').val(`http://lexxxbro.com/ready/${window.postcard.videoID}/final.mpg`).focus()
     }else{
       window.reload()
     }
