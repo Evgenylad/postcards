@@ -25,6 +25,7 @@
       $('#first, .first, #loader, .pop, .fone').hide()
       $('#last').show()
       $('#LINK').val(`http://lexxxbro.com/ready/${window.postcard.videoID}/final.mpg`).select()
+      document.execCommand('copy')
     }else{
       window.reload()
     }
