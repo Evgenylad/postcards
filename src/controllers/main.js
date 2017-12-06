@@ -123,7 +123,7 @@ const vkAuth = async (req, res) => {
 }
 
 const videoShow = async (req, res) => {
-  res.render('main/video.pug', { id: `http://lexxxbro.com/videopostcard/${req.params.id}` })
+  res.render('main/video.pug', { id: `http://lexxxbro.com/videopostcard/${req.params.id}`, video: `http://lexxxbro.com/ready/${req.params.id}/final.mp4` })
 }
 
 
