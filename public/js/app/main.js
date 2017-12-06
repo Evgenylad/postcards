@@ -25,7 +25,6 @@
       $('#first, .first, #loader, .pop, .fone').hide()
       $('#last').show()
       $('#LINK').val(`http://lexxxbro.com/ready/${window.postcard.videoID}/final.mpg`).select()
-      document.execCommand('copy')
     }else{
       window.reload()
     }
@@ -53,7 +52,11 @@
     }
   }
 
-  
+  main.copyText = () => {
+    const text = $('#LINK').val()
+    document.execCommand('copy')
+    $('#LINK').val('')
+  }  
 
   main.ready = function() {
     const check = window.localStorage.getItem('browserID')
@@ -64,7 +67,7 @@
       window.browserID = window.localStorage.getItem('browserID')
     }
     window.userID = uuidv4()
-
+    $('#copyLink').on('click', main.copyText)
     $('#choose-name').on('click', main.showPopup)
     $('.fone').on('click', main.hidePopup)
     $('.red-button').on('click', main.showFirstStep)
