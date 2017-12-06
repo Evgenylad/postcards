@@ -6,6 +6,5 @@ const router = Router()
 
 router.get('/', mainController.runApp)
 router.post('/makePostcard', mainController.makePostcard)
-router.get('/vkauth', mainController.vkAuth)
-
+router.get('/videopostcard/:id', mainController.videoShow)
 export default router

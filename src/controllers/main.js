@@ -93,6 +93,8 @@ const makeVideo = async (uid, name) => {
 
   */
 
+  //GROUP-SECRET-KEY = 217273f4710dccd257b4eaa845b8701cd7976f9e65e741dffeec85db88d3d933c027f06ec00adf7231ac3
+
   //const CLIENT_ID = '6285247'
   //const CLIENT_SECRET = 'iXzDiPzHGhtrAPv6tcw1'
   /*const { data: response } = await axios.get(`https://oauth.vk.com/access_token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&v=5.69&grant_type=client_credentials`)
@@ -111,7 +113,7 @@ const makeVideo = async (uid, name) => {
 const makePostcard = async (req, res) => {
   const made = await makeVideo(req.body.userID, req.body.name)
   const result = await addPostcard({ uid: req.body.userID, name: req.body.name })
-  //const vkResult = await loadToVk(result)
+  const vkResult = await loadToVk(result)
   console.log(result)
   res.send({ check: 1, result })
 }
@@ -120,5 +122,9 @@ const vkAuth = async (req, res) => {
   res.render('main/vkauth.pug')
 }
 
+const videoShow = async (req, res) => {
+  res.render('main/video.pug', { id: `http://lexxxbro.com/ready/${req.params.id}/final.mp4` })
+}
 
-export default { runApp, makePostcard, vkAuth }
+
+export default { runApp, makePostcard, videoShow }
